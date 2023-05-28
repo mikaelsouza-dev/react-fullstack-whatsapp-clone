@@ -14,10 +14,10 @@ function App() {
               <MdDonutLarge className='icon' />
             </div>
             <div className="header--btn">
-              <MdChat />
+              <MdChat className='icon' />
             </div>
             <div className="header--btn">
-              <MdMoreVert />
+              <MdMoreVert className='icon' />
             </div>
           </div>
         </header>

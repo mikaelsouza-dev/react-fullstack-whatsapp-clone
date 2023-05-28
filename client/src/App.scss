@@ -1,6 +1,7 @@
 $backgroundColor: #D2dbdc;
 $color2: #EDEDED;
 $darkGray: #ddd;
+$iconColors: #919191;
 
 * {
     box-sizing: border-box;
@@ -39,13 +40,20 @@ body {
                 cursor: pointer;
             }
 
-            .header-buttons {
+            .header--buttons {
                 display: flex;
                 flex-direction: row;
 
                 .header--btn {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
                     .icon {
-                        color: red;
+                        color: $iconColors;
                     }
                 }
             }
