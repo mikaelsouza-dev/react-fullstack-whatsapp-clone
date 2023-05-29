@@ -2,9 +2,11 @@ import './App.scss'
 import React, { useState } from 'react'
 import { MdDonutLarge, MdChat, MdMoreVert, MdSearch } from 'react-icons/md'
 import ChatListItem from './components/ChatListItem'
+import ChatIntro from './components/ChatIntro'
 
 function App() {
   const [chatlist, setChatlist] = useState([{}, {},{}, {}, {}, {},{}, {}])
+  const [activeChat, setActiveChat] = useState({})
 
   return (
     <div className="app-window">
@@ -39,7 +41,11 @@ function App() {
         </div>
       </div>
       <div className="contentArea">
-        ...
+        {activeChat.chatId !== undefined &&
+          
+        }
+
+        <ChatIntro />
       </div>
     </div>
   )
