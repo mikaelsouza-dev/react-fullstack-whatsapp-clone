@@ -1,3 +1,5 @@
+import './ChatListItem.scss'
+
 const ChatListItem = () => {
 
 
