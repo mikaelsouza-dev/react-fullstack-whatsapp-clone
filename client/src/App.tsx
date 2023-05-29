@@ -1,7 +1,7 @@
 import './App.scss'
 import React, { useState } from 'react'
 import { MdDonutLarge, MdChat, MdMoreVert, MdSearch } from 'react-icons/md'
-import ChatListItem from '../components/ChatListItem'
+import ChatListItem from './components/ChatListItem'
 
 function App() {
   const [chatlist, setChatlist] = useState([{}, {},{}, {}, {}, {},{}, {}])
