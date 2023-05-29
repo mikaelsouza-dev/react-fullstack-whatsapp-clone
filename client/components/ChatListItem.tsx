@@ -11,7 +11,7 @@ const ChatListItem = () => {
                 </div>
                 <div className="line">
                     <div className="lastMsg">
-                        <p>Opa, tudo bem?</p>
+                        <p>Opa, tudo bem?aaaaaaaaaaaaaaaaaaaaaaaaaaaa sdasdasd</p>
                     </div>
                 </div>
             </div>
