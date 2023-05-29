@@ -1,10 +1,14 @@
 import './ChatListItem.scss'
 
-const ChatListItem = () => {
+type Props = {
+    onClick: React.MouseEventHandler<HTMLDivElement>;
+}
+
+const ChatListItem = ({onClick}: Props) => {
 
 
     return (
-        <div className="chatListItem">
+        <div className="chatListItem" onClick={onClick}>
             <img className="avatar" src="https://www.w3schools.com/howto/img_avatar2.png" alt="" />
             <div className="lines">
                 <div className="line">

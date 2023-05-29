@@ -3,10 +3,28 @@ import React, { useState } from 'react'
 import { MdDonutLarge, MdChat, MdMoreVert, MdSearch } from 'react-icons/md'
 import ChatListItem from './components/ChatListItem'
 import ChatIntro from './components/ChatIntro'
+import ChatWindow from './components/ChatWindow'
 
 function App() {
-  const [chatlist, setChatlist] = useState([{}, {},{}, {}, {}, {},{}, {}])
-  const [activeChat, setActiveChat] = useState({})
+  type Chat = {
+    chatId: number;
+    title: string;
+    imagem: string;
+  };
+
+  const [chatlist, setChatlist] = useState([
+    {chatId: 1, title: 'Fulado de tal', imagem: 'https://www.w3schools.com/howto/img_avatar2.png'}
+  ])
+  const [activeChat, setActiveChat] = useState<Chat | null>(null);
+
+
+  const [showChatWindow, setShowChatWindow] = useState(false);
+
+  const handleChatClick = (chat: { chatId: number; title: string; imagem: string }) => {
+    setActiveChat(chat);
+    setShowChatWindow(true);
+  };
+  
 
   return (
     <div className="app-window">
@@ -36,16 +54,17 @@ function App() {
           {chatlist.map((item, key) => (
             <ChatListItem
             key={key}
-            />
+            onClick={() => handleChatClick(chatlist[key])}
+          />
           ))}
-        </div>
+        </div>  
       </div>
       <div className="contentArea">
-        {activeChat.chatId !== undefined &&
-          
-        }
-
-        <ChatIntro />
+        {activeChat ? (
+          <ChatWindow activeChat={activeChat} />
+        ) : (
+          <ChatIntro />
+        )}
       </div>
     </div>
   )
