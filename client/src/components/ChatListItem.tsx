@@ -2,17 +2,23 @@ import './ChatListItem.scss'
 
 type Props = {
     onClick: React.MouseEventHandler<HTMLDivElement>;
+    active: boolean;
+    data: {
+        chatId: number;
+        title: string;
+        imagem: string;
+      };
 }
 
-const ChatListItem = ({onClick}: Props) => {
+const ChatListItem = ({onClick, active, data}: Props) => {
 
 
     return (
-        <div className="chatListItem" onClick={onClick}>
-            <img className="avatar" src="https://www.w3schools.com/howto/img_avatar2.png" alt="" />
+        <div className={`chatListItem ${active?'active':''}`} onClick={onClick}>
+            <img className="avatar" src={data.imagem} alt="" />
             <div className="lines">
                 <div className="line">
-                    <div className="name">Mikael Souza</div>
+                    <div className="name">{data.title}</div>
                     <div className="date">19:00</div>
                 </div>
                 <div className="line">

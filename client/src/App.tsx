@@ -1,5 +1,5 @@
 import './App.scss'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { MdDonutLarge, MdChat, MdMoreVert, MdSearch } from 'react-icons/md'
 import ChatListItem from './components/ChatListItem'
 import ChatIntro from './components/ChatIntro'
@@ -13,6 +13,8 @@ function App() {
   };
 
   const [chatlist, setChatlist] = useState([
+    {chatId: 1, title: 'Fulado de tal', imagem: 'https://www.w3schools.com/howto/img_avatar2.png'},
+    {chatId: 1, title: 'Fulado de tal', imagem: 'https://www.w3schools.com/howto/img_avatar2.png'},
     {chatId: 1, title: 'Fulado de tal', imagem: 'https://www.w3schools.com/howto/img_avatar2.png'}
   ])
   const [activeChat, setActiveChat] = useState<Chat | null>(null);
@@ -54,6 +56,8 @@ function App() {
           {chatlist.map((item, key) => (
             <ChatListItem
             key={key}
+            data={item}
+            active={true}
             onClick={() => handleChatClick(chatlist[key])}
           />
           ))}
