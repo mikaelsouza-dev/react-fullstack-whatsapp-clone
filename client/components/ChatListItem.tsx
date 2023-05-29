@@ -3,7 +3,7 @@ const ChatListItem = () => {
 
     return (
         <div className="chatListItem">
-            <img className="avatar" src="" alt="" />
+            <img className="avatar" src="https://www.w3schools.com/howto/img_avatar2.png" alt="" />
             <div className="lines">
                 <div className="line">
                     <div className="name">Mikael Souza</div>
