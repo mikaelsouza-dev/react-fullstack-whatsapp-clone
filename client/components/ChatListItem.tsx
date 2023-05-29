@@ -10,7 +10,7 @@ const ChatListItem = () => {
                     <div className="date">19:00</div>
                 </div>
                 <div className="line">
-                    <div className="lasMsg">
+                    <div className="lastMsg">
                         <p>Opa, tudo bem?</p>
                     </div>
                 </div>

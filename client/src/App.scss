@@ -4,6 +4,7 @@ $color3: #f6f6f6;
 $darkGray: #ddd;
 $iconColors: #919191;
 $white: #fff;
+$grayE: #eee;
 
 * {
     box-sizing: border-box;
@@ -34,7 +35,7 @@ body {
 
         .search {
             background-color: $color3;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid $grayE;
             padding: 5px 15px;
             .search--input {
                 background-color: $white;
@@ -51,6 +52,12 @@ body {
                     margin-left: 10px;
                 }
             }
+        }
+
+        .chatlist {
+            flex: 1;
+            background-color: #fff;
+            overflow-y: auto;
         }
 
         header {
