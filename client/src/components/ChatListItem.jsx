@@ -1,15 +1,15 @@
 import './ChatListItem.scss'
 
 
-const ChatListItem = ({onClick}) => {
+const ChatListItem = ({onClick, data}) => {
 
 
     return (
         <div className="chatListItem" onClick={onClick}>
-            <img className="avatar" src="https://www.w3schools.com/howto/img_avatar2.png" alt="" />
+            <img className="avatar" src={data.avatar} alt="" />
             <div className="lines">
                 <div className="line">
-                    <div className="name">Mikael Souza</div>
+                    <div className="name">{data.title}</div>
                     <div className="date">19:00</div>
                 </div>
                 <div className="line">

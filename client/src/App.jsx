@@ -8,9 +8,9 @@ import ChatWindow from './components/ChatWindow'
 function App() {
 
   const [chatlist, setChatlist] = useState([
-    {chatId: 1, title: 'Fulado de tal', imagem: 'https://www.w3schools.com/howto/img_avatar2.png'},
-    {chatId: 2, title: 'Fulado de tal', imagem: 'https://www.w3schools.com/howto/img_avatar2.png'},
-    {chatId: 3, title: 'Fulado de tal', imagem: 'https://www.w3schools.com/howto/img_avatar2.png'}
+    {chatId: 1, title: 'Fulado de tal', avatar: 'https://www.w3schools.com/howto/img_avatar2.png'},
+    {chatId: 2, title: 'Fulado de tal2', avatar: 'https://www.w3schools.com/howto/img_avatar2.png'},
+    {chatId: 3, title: 'Fulado de tal3', avatar: 'https://www.w3schools.com/howto/img_avatar2.png'}
   ])
   const [activeChat, setActiveChat] = useState({});  
 
@@ -42,6 +42,8 @@ function App() {
           {chatlist.map((item, key) => (
             <ChatListItem
               key={key}
+              data={item}
+              active={activeChat.chatId === chatlist[key].chatId}
               onClick={() => setActiveChat(chatlist[key])}
           />
           ))}
