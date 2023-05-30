@@ -38,6 +38,7 @@
                 align-items: center;
                 cursor: pointer;
                 color: #919191;
+                
             }
         }
     }
@@ -51,6 +52,13 @@
     background-position: center;
     background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
 }
+
+.emojiarea {
+    height: 350px;
+    overflow-y: hidden;
+    transition: all ease .3s;
+}
+
 
 .footer {
     height: 62px;
@@ -88,5 +96,7 @@
         cursor: pointer;
         color: #919191;
         font-size: 40px;
+        overflow: hidden;
+            transition: all ease .3s;
     }
 }
