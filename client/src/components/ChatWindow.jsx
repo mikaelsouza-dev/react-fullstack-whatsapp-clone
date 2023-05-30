@@ -1,12 +1,6 @@
-type Props = {
-    data: {
-        chatId: number;
-        title: string;
-        imagem: string;
-      };
-}
 
-function ChatWindow( activeChat: any ) {
+
+function ChatWindow( activeChat ) {
     console.log(activeChat)
   return (
     <div className="chatWindow">
