@@ -1,5 +1,5 @@
 import './ChatWindow.scss';
-import {MdSearch, MdAttachFile, MdMoreVert} from 'react-icons/md'
+import {MdSearch, MdAttachFile, MdMoreVert, MdInsertEmoticon, MdClose, MdSend, MdMic} from 'react-icons/md'
 
 function ChatWindow( activeChat ) {
     console.log(activeChat)
@@ -20,7 +20,25 @@ function ChatWindow( activeChat ) {
             </div>
         </div>
         <div className="body"></div>
-        <div className="footer"></div>
+      <div className="footer">
+        <div className="pre">
+          <div className="btn">
+            <MdInsertEmoticon />
+          </div>
+        </div>
+        <div className="inputarea">
+          <input
+            className="input"
+            type="text"
+            placeholder='Digite uma mensagem'
+          />
+        </div>
+        <div className="pos">
+          <div className="btn">
+            <MdSend />
+          </div>
+        </div>
+        </div>
     </div>
   );
 }
