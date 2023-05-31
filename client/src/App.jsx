@@ -4,6 +4,7 @@ import { MdDonutLarge, MdChat, MdMoreVert, MdSearch } from 'react-icons/md'
 import ChatListItem from './components/ChatListItem'
 import ChatIntro from './components/ChatIntro'
 import ChatWindow from './components/ChatWindow'
+import NewChat from './components/NewChat'
 
 function App() {
 
@@ -19,10 +20,21 @@ function App() {
     name: 'Mikael Souza'
   });
 
+  const [showNewChat, setShowNewChat] = useState(false);
+
+  const handleNewChat = () => {
+    setShowNewChat(true);
+  }
+
   return (
     <div className="app-window">
       <div className="sidebar">
-        
+        <NewChat
+          chatlist={chatlist}
+          user={user}
+          show={showNewChat}
+          setShow={setShowNewChat}
+        />
         <header>
           <img className='header--avatar' src={user.avatar} alt="" />
           <div className="header--buttons">
@@ -30,7 +42,7 @@ function App() {
               <MdDonutLarge className='icon' />
             </div>
             <div className="header--btn">
-              <MdChat className='icon' />
+              <MdChat onClick={handleNewChat} className='icon' />
             </div>
             <div className="header--btn">
               <MdMoreVert className='icon' />
