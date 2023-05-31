@@ -1,4 +1,5 @@
 import './ChatWindow.scss';
+import MessageItem from './MessageItem'
 import { MdSearch, MdAttachFile, MdMoreVert, MdInsertEmoticon, MdClose, MdSend, MdMic } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react';
 import { useState } from 'react';
@@ -13,7 +14,8 @@ function ChatWindow(activeChat) {
   
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [text, setText] = useState('');
-  const [listening, setListening] = useState(false)
+  const [listening, setListening] = useState(false);
+  const [list, setList] = useState([{}, {}, {}]);
     
   const handleEmojiClick = (e) => {
     setText(text + e.emoji)
@@ -62,7 +64,14 @@ function ChatWindow(activeChat) {
               </div>
             </div>
         </div>
-      <div className="body"></div>
+      <div className="body">
+        {list.map((item, key) => (
+        <MessageItem
+          key={key}
+          data={item}
+        />
+        ))}
+      </div>
       
       <div className="emojiarea" style={{height: emojiOpen? '350px' : '0'}}>
         <EmojiPicker
