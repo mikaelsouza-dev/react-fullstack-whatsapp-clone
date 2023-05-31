@@ -4,11 +4,19 @@ import EmojiPicker from 'emoji-picker-react';
 import { useState } from 'react';
 
 function ChatWindow(activeChat) {
+
+  let recognition = null;
+  let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (SpeechRecognition !== undefined) {
+    recognition = new SpeechRecognition();
+  }
   
   const [emojiOpen, setEmojiOpen] = useState(false);
+  const [text, setText] = useState('');
+  const [listening, setListening] = useState(false)
     
-  const handleEmojiClick = () => {
-    console.log('t')
+  const handleEmojiClick = (e) => {
+    setText(text + e.emoji)
   }
 
   const handleOpenEmoji = () => {
@@ -16,6 +24,26 @@ function ChatWindow(activeChat) {
   }
   const handleCloseEmoji = () => {
     setEmojiOpen(false)
+  }
+
+  const handleMicClick = () => {
+    if (recognition !== null) {
+      recognition.onstart = () => {
+        setListening(true);
+      }
+      recognition.onend = () => {
+        setListening(false);
+      }
+      recognition.onresult = (e) => {
+        console.log(e.results[0][0].transcript);
+      }
+
+      recognition.start();
+    }
+  }
+
+  const handleSendClick = () => {
+
   }
 
   return (
@@ -57,12 +85,21 @@ function ChatWindow(activeChat) {
             className="input"
             type="text"
             placeholder='Digite uma mensagem'
+            value={text}
+            onChange={e => setText(e.target.value)}
           />
         </div>
         <div className="pos">
-          <div className="btn">
-            <MdSend />
-          </div>
+          {text === '' &&
+            <div className="btn">
+              <MdMic onClick={handleMicClick} style={{color: listening? '#126ece' : '#919191'}} />
+            </div>
+          }
+          {text !== '' &&
+            <div className="btn">
+              <MdSend onClick={handleSendClick} />
+            </div>
+          }
         </div>
         </div>
     </div>
