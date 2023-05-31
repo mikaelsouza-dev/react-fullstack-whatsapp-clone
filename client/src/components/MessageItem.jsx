@@ -1,11 +1,15 @@
 import React from 'react'
 import './MessageItem.scss'
 
-const MessageItem = () => {
+const MessageItem = ({data, user}) => {
   return (
-      <div className="messageLine">
-          <div className="Item">
-              <div className="Text">ajskd kjasjkd sajkdk jasdj aksjdjkaskjdjkas jkakdkjaskd kasjdkjaskjkjd akjd jksa askjdaskjd ajdka kjdkjas djkakd jakjdakjskdjajk asdjkds akj aklsdlkasdklsa lkdaskldakls dklal kdsakldaskldk laskld askld aslkd saklajskdjkaskdjas jkdas jkdjkas jkdasjkd asjdjk asjkdjkasjkd askjjkdas dkjas jkdask </div>
+      <div className="messageLine"
+      style={{justifyContent: user.id === data.author ? 'flex-end' : 'flex-start'}}
+      >
+          <div className="Item"
+            style={{backgroundColor: user.id === data.author ? '#DCF8D6' : '#fff'}}
+          >
+              <div className="Text">{data.body}</div>
               <div className="Date">19:00</div>
           </div>
     </div>

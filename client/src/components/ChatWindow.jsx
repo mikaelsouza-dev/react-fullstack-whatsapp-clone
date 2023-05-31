@@ -2,9 +2,11 @@ import './ChatWindow.scss';
 import MessageItem from './MessageItem'
 import { MdSearch, MdAttachFile, MdMoreVert, MdInsertEmoticon, MdClose, MdSend, MdMic } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-function ChatWindow(activeChat) {
+function ChatWindow({ user }) {
+  
+  const body = useRef();
 
   let recognition = null;
   let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -15,7 +17,13 @@ function ChatWindow(activeChat) {
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [text, setText] = useState('');
   const [listening, setListening] = useState(false);
-  const [list, setList] = useState([{}, {}, {}]);
+  const [list, setList] = useState([{ author: 123, body: 'teste' }, { author: 123, body: 'teste' }, { author: 1234, body: 'teste' }]);
+  
+  useEffect(() => {
+    if (body.current.scrollHeight > body.current.offsetHeight) {
+      body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight;
+    }
+  }, [list])
     
   const handleEmojiClick = (e) => {
     setText(text + e.emoji)
@@ -64,11 +72,12 @@ function ChatWindow(activeChat) {
               </div>
             </div>
         </div>
-      <div className="body">
+      <div ref={body} className="body">
         {list.map((item, key) => (
         <MessageItem
           key={key}
-          data={item}
+            data={item}
+            user={user}
         />
         ))}
       </div>

@@ -12,14 +12,19 @@ function App() {
     {chatId: 2, title: 'Fulado de tal2', avatar: 'https://www.w3schools.com/howto/img_avatar2.png'},
     {chatId: 3, title: 'Fulado de tal3', avatar: 'https://www.w3schools.com/howto/img_avatar2.png'}
   ])
-  const [activeChat, setActiveChat] = useState({});  
+  const [activeChat, setActiveChat] = useState({});
+  const [user, setuser] = useState({
+    id: 1234,
+    avatar: 'https://www.w3schools.com/howto/img_avatar2.png',
+    name: 'Mikael Souza'
+  });
 
   return (
     <div className="app-window">
       <div className="sidebar">
         
         <header>
-          <img className='header--avatar' src="https://www.w3schools.com/howto/img_avatar2.png" alt="" />
+          <img className='header--avatar' src={user.avatar} alt="" />
           <div className="header--buttons">
             <div className="header--btn">
               <MdDonutLarge className='icon' />
@@ -51,7 +56,9 @@ function App() {
       </div>
       <div className="contentArea">
         {activeChat.chatId !== undefined &&
-            <ChatWindow />
+          <ChatWindow
+          user={user}  
+        />
         }
         {activeChat.chatId === undefined &&
           <ChatIntro />
