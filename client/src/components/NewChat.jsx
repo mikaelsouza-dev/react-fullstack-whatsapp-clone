@@ -20,7 +20,11 @@ const NewChat = ({user, chatlist, show, setShow}) => {
         setShow(false);
     }
 
-    
+    const addNewChat = async(user2) => {
+        await Api.addNewChat(user, user2);
+
+        handleClose();
+    }
 
   return (
       <div className="newChat" style={{left: show? 0 : -415}}>
@@ -32,7 +36,7 @@ const NewChat = ({user, chatlist, show, setShow}) => {
           </div>
           <div className="list">
               {list.map((item, key) => (
-                  <div className="item" key={key}>
+                  <div onClick={() => addNewChat(item)} className="item" key={key}>
                       <img className="itemavatar" src={item.avatar} alt="" />
                       <div className="itemname">{item.name}</div>
                 </div>

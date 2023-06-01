@@ -1,6 +1,8 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { addDoc, arrayUnion, collection, deleteDoc, doc, documentId, getDoc, getDocs, onSnapshot, query, setDoc, updateDoc, where } from "firebase/firestore";
+
 
 import firebaseConfig from './firebaseConfig';
 
@@ -36,5 +38,56 @@ export default {
         });
 
         return list;
-    }
+    },
+    addNewChat: async(user, user2) => {
+        let newChat = await db.collection('chats').add({
+            messages: [],
+            users: [user.id, user2.id]
+        });
+
+        db.collection('users').doc(user.id).update({
+            chats: firebase.firestore.FieldValue.arrayUnion({
+                chatId: newChat.id,
+                title: user2.name,
+                image: user.avatar,
+                with: user2.id
+            })
+        });
+
+        db.collection('users').doc(user2.id).update({
+            chats: firebase.firestore.FieldValue.arrayUnion({
+                chatId: newChat.id,
+                title: user.name,
+                image: user.avatar,
+                with: user.id
+            })
+        });
+    },
+    onChatList: (userId, setChatList) => {
+        return onSnapshot(doc(db, "users", userId), (doc) => {
+            if (doc.exists) {
+                let data = doc.data();
+                if (data.chats) {
+                    let chats = [...data.chats];
+
+                    chats.sort((a, b) => {
+                        if (a.lastMessageDate === undefined) {
+                            return -1;
+                        }
+                        if (b.lastMessageDate === undefined) {
+                            return -1;
+                        }
+
+                        if (a.lastMessageDate.seconds < b.lastMessageDate.seconds) {
+                            return 1;
+                        } else {
+                            return -1;
+                        }
+                    });
+
+                    setChatList(chats);
+                }
+            }
+        });
+    },
 };

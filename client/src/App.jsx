@@ -1,5 +1,5 @@
 import './App.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MdDonutLarge, MdChat, MdMoreVert, MdSearch } from 'react-icons/md'
 import ChatListItem from './components/ChatListItem'
 import ChatIntro from './components/ChatIntro'
@@ -12,9 +12,20 @@ function App() {
 
   const [chatlist, setChatlist] = useState([])
   const [activeChat, setActiveChat] = useState({});
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    id: '9tG2QbAe417yEcYkOhV4',
+    name: 'Mikael Souza',
+    avatar: 'https://lh3.googleusercontent.com/a/AAcHTtdx22fK71BrIHqVVNBAKwEZ8n48KCOX8eR_LIZM=s96-c'
+  });
 
   const [showNewChat, setShowNewChat] = useState(false);
+
+  useEffect(() => {
+    if (user !== null) {
+      let unsub = Api.onChatList(user.id, setChatlist);
+      return unsub;
+    }
+  }, [user])
 
   const handleNewChat = () => {
     setShowNewChat(true);
