@@ -6,17 +6,13 @@ import ChatIntro from './components/ChatIntro'
 import ChatWindow from './components/ChatWindow'
 import NewChat from './components/NewChat'
 import Login from './components/Login'
-import Api from './Api'
+import Api from './api/Api'
 
 function App() {
 
   const [chatlist, setChatlist] = useState([])
   const [activeChat, setActiveChat] = useState({});
-  const [user, setUser] = useState({
-    id: '9tG2QbAe417yEcYkOhV4',
-    name: 'Mikael Souza',
-    avatar: 'https://lh3.googleusercontent.com/a/AAcHTtdx22fK71BrIHqVVNBAKwEZ8n48KCOX8eR_LIZM=s96-c'
-  });
+  const [user, setUser] = useState(null);
 
   const [showNewChat, setShowNewChat] = useState(false);
 

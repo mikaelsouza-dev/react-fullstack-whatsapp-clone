@@ -29,6 +29,10 @@ body {
         flex-direction: column;
         border-right: 1px solid $darkGray;
 
+        @media (max-width: 750px) {
+            width: 0%;
+         }
+
         .icon {
             color: $iconColors;
         }

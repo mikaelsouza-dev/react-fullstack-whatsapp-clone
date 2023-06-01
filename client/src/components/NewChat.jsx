@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './NewChat.scss'
 import { MdArrowBack } from 'react-icons/md'
-import Api from '../Api';
+import Api from '../api/Api';
 
 const NewChat = ({user, chatlist, show, setShow}) => {
     const [list, setList] = useState([]);

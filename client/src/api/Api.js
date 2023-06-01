@@ -3,28 +3,10 @@ import { authentication, db } from './firebaseConfig';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, documentId, getDoc, getDocs, onSnapshot, query, setDoc, updateDoc, where } from "firebase/firestore";
 
 export default {
-    fbPopup: async () => {
-        const provider = new FacebookAuthProvider();
+    gbPopup: async () => {
+        const provider = new GoogleAuthProvider();
         let result = await signInWithPopup(authentication, provider);
         return result;
-    },
-    glgPopup: async () => {
-        try {
-            const provider = new GoogleAuthProvider();
-            let result = await signInWithPopup(authentication, provider);
-            return result;
-        } catch (e) {
-            console.error("Erro: ", e);
-        }
-    },
-    gthbPopup: async () => {
-        try {
-            const provider = new GithubAuthProvider();
-            let result = await signInWithPopup(authentication, provider);
-            return result;
-        } catch (e) {
-            console.error("Erro: ", e);
-        }
     },
     addUser: async (u) => {
         try {
