@@ -4,3 +4,8 @@
     justify-content: center;
     align-items: center
 }
+button {
+    background-color: #DD4B39;
+    padding: 20px;
+    border: 1px solid #DD4B39
+}
