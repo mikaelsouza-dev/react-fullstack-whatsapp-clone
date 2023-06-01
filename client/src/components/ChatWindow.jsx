@@ -3,10 +3,10 @@ import MessageItem from './MessageItem'
 import { MdSearch, MdAttachFile, MdMoreVert, MdInsertEmoticon, MdClose, MdSend, MdMic } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react';
 import { useState, useEffect, useRef } from 'react';
+import Api from '../Api';
 
-function ChatWindow({ user }) {
+function ChatWindow({ user, data }) {
   
-  const body = useRef();
 
   let recognition = null;
   let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -15,53 +15,77 @@ function ChatWindow({ user }) {
   }
   
   const [emojiOpen, setEmojiOpen] = useState(false);
-  const [text, setText] = useState('');
-  const [listening, setListening] = useState(false);
-  const [list, setList] = useState([{ author: 123, body: 'teste' }, { author: 123, body: 'teste' }, { author: 1234, body: 'teste' }]);
-  
+    const [text, setText] = useState('');
+    const [list, setList] = useState([]);
+    const [users, setUsers] = useState([]);
+    const [listening, setListening] = useState(false);
+    const body = useRef();
+
   useEffect(() => {
-    if (body.current.scrollHeight > body.current.offsetHeight) {
-      body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight;
+        setList([]);
+        let unsub = Api.onChatContent(data.chatId, setList, setUsers);
+        return unsub;
+    }, [data.chatId]);
+
+    useEffect(() => {
+        if (body.current.scrollHeight > body.current.offsetHeight) {
+            body.current.scrollTop = body.current.scrollHeight - body.current.offsetHeight;
+        }
+    }, [list]);
+
+
+    const handleOpenEmoji = () => {
+        setEmojiOpen(true);
     }
-  }, [list])
-    
-  const handleEmojiClick = (e) => {
-    setText(text + e.emoji)
-  }
 
-  const handleOpenEmoji = () => {
-    setEmojiOpen(true)
-  }
-  const handleCloseEmoji = () => {
-    setEmojiOpen(false)
-  }
-
-  const handleMicClick = () => {
-    if (recognition !== null) {
-      recognition.onstart = () => {
-        setListening(true);
-      }
-      recognition.onend = () => {
-        setListening(false);
-      }
-      recognition.onresult = (e) => {
-        console.log(e.results[0][0].transcript);
-      }
-
-      recognition.start();
+    const handleCloseEmoji = () => {
+        setEmojiOpen(false);
     }
-  }
 
-  const handleSendClick = () => {
+    const handleEmojiClick = (emojiObject, e) => {
+        setText(text + emojiObject.emoji)
+    }
 
-  }
+    const handleMicClick = () => {
+        if (recognition !== null) {
+
+            recognition.onstart = () => {
+                setListening(true);
+            }
+            recognition.onend = () => {
+                setListening(false);
+            }
+            recognition.onresult = (e) => {
+                setText(e.results[0][0].transcript);
+            }
+
+            recognition.start();
+
+        } else {
+            alert('Navegador não suporta uso de Microfone.');
+        }
+    }
+
+    const handleInputKeyUp = (e) => {
+        if (e.keyCode == 13) {
+            handleSendClick();
+        }
+    }
+
+    const handleSendClick = () => {
+        if (text !== '') {
+            Api.sendMessage(data, user.id, 'text', text, users);
+            setText('');
+            setEmojiOpen(false);
+        }
+    }
 
   return (
     <div className="chatWindow">
         <div className="header">
             <div className="headerinfo">
-                <img className='avatar' src="https://www.w3schools.com/howto/img_avatar2.png" alt="" />
-              <div className="name">Mikael Souza</div>
+                <img className='avatar' src={data.image} alt="" />
+          <div className="name">{data.title}</div>
             </div>
 
             <div className="header-buttons">
@@ -75,7 +99,7 @@ function ChatWindow({ user }) {
       <div ref={body} className="body">
         {list.map((item, key) => (
         <MessageItem
-          key={key}
+            key={key}
             data={item}
             user={user}
         />
@@ -105,6 +129,7 @@ function ChatWindow({ user }) {
             placeholder='Digite uma mensagem'
             value={text}
             onChange={e => setText(e.target.value)}
+            onKeyUp={handleInputKeyUp}
           />
         </div>
         <div className="pos">

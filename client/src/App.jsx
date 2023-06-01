@@ -87,7 +87,8 @@ function App() {
       <div className="contentArea">
         {activeChat.chatId !== undefined &&
           <ChatWindow
-          user={user}  
+          user={user} 
+          data={activeChat}
         />
         }
         {activeChat.chatId === undefined &&
