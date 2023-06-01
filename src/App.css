@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    background-color: #d2dbdc;
+    margin: 0;
+    font-family: "Segoe UI", Helvetica Neue, Helvetica, Lucida Grande, Arial
+}
+
+.app-window {
+    display: flex;
+    height: 100vh;
+    background-color: #ededed
+}
+
+.app-window .sidebar {
+    width: 35%;
+    max-width: 415px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd
+}
+
+@media (max-width:750px) {
+    .app-window .sidebar {
+        width: 0%
+    }
+}
+
+.app-window .sidebar .icon {
+    color: #919191
+}
+
+.app-window .sidebar .search {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #eee;
+    padding: 5px 15px
+}
+
+.app-window .sidebar .search .search--input {
+    background-color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px
+}
+
+.app-window .sidebar .search .search--input input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    margin-left: 10px
+}
+
+.app-window .sidebar .chatlist {
+    flex: 1;
+    background-color: #fff;
+    overflow-y: auto
+}
+
+.app-window .sidebar header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px
+}
+
+.app-window .sidebar header .header--avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer
+}
+
+.app-window .sidebar header .header--buttons {
+    display: flex;
+    flex-direction: row
+}
+
+.app-window .sidebar header .header--buttons .header--btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer
+}
+
+.app-window .contentArea {
+    flex: 1
+}

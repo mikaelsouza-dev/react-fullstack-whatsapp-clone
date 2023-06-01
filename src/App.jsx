@@ -1,4 +1,4 @@
-import './App.scss'
+import './App.css'
 import { useEffect, useState } from 'react'
 import { MdDonutLarge, MdChat, MdMoreVert, MdSearch } from 'react-icons/md'
 import ChatListItem from './components/ChatListItem'

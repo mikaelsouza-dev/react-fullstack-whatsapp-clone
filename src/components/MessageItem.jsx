@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./MessageItem.scss";
+import "./MessageItem.css";
 
 export default ({ data, user }) => {
 

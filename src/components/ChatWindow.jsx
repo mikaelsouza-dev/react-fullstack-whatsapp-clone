@@ -1,4 +1,4 @@
-import './ChatWindow.scss';
+import './ChatWindow.css';
 import MessageItem from './MessageItem'
 import { MdSearch, MdAttachFile, MdMoreVert, MdInsertEmoticon, MdClose, MdSend, MdMic } from 'react-icons/md'
 import EmojiPicker from 'emoji-picker-react';

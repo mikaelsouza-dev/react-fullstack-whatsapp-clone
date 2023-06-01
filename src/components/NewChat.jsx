@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './NewChat.scss'
+import './NewChat.css'
 import { MdArrowBack } from 'react-icons/md'
 import Api from '../api/Api';
 

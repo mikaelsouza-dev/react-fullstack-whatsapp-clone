@@ -1,6 +1,6 @@
 import React from 'react';
 import Api from '../api/Api';
-import './Login.scss'
+import './Login.css'
 
 const Login = ({onReceive}) => {
     const handleGoogleLogin = async () => {

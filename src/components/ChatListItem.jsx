@@ -1,4 +1,4 @@
-import './ChatListItem.scss'
+import './ChatListItem.css'
 import React, { useState, useEffect } from 'react'
 
 
