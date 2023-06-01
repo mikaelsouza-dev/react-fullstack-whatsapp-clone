@@ -1,4 +1,4 @@
-import { signInWithPopup, FacebookAuthProvider, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { authentication, db } from './firebaseConfig';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, documentId, getDoc, getDocs, onSnapshot, query, setDoc, updateDoc, where } from "firebase/firestore";
 
@@ -164,7 +164,7 @@ export default {
                         }
                     }
 
-                    const userRef = doc(db, "users", users[i]);
+                    
                     await updateDoc(docRef, {
                         chats
                     });
