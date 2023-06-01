@@ -6,16 +6,13 @@ import ChatIntro from './components/ChatIntro'
 import ChatWindow from './components/ChatWindow'
 import NewChat from './components/NewChat'
 import Login from './components/Login'
+import Api from './Api'
 
 function App() {
 
-  const [chatlist, setChatlist] = useState([
-    {chatId: 1, title: 'Fulado de tal', avatar: 'https://www.w3schools.com/howto/img_avatar2.png'},
-    {chatId: 2, title: 'Fulado de tal2', avatar: 'https://www.w3schools.com/howto/img_avatar2.png'},
-    {chatId: 3, title: 'Fulado de tal3', avatar: 'https://www.w3schools.com/howto/img_avatar2.png'}
-  ])
+  const [chatlist, setChatlist] = useState([])
   const [activeChat, setActiveChat] = useState({});
-  const [user, setuser] = useState(null);
+  const [user, setUser] = useState(null);
 
   const [showNewChat, setShowNewChat] = useState(false);
 
@@ -29,7 +26,8 @@ function App() {
       name: u.displayName,
       avatar: u.photoURL
     };
-    setuser(newUser)
+    await Api.addUser(newUser);
+    setUser(newUser);
   }
 
   if (user === null) {

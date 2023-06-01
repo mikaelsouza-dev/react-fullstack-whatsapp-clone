@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './NewChat.scss'
 import { MdArrowBack } from 'react-icons/md'
+import Api from '../Api';
 
 const NewChat = ({user, chatlist, show, setShow}) => {
-    const [list, setList] = useState([
-        { id: 123, avatar: 'https://www.w3schools.com/howto/img_avatar2.png', name: 'Mikael Souza' },
-        { id: 123, avatar: 'https://www.w3schools.com/howto/img_avatar2.png', name: 'Mikael Souza' },
-        { id: 123, avatar: 'https://www.w3schools.com/howto/img_avatar2.png', name: 'Mikael Souza' },
-        { id: 123, avatar: 'https://www.w3schools.com/howto/img_avatar2.png', name: 'Mikael Souza' }
-    ]);
+    const [list, setList] = useState([]);
+
+    useEffect(() => {
+        const getList = async () => {
+            if (user !== null) {
+                let result = await Api.getContactList(user.id);
+                setList(result)
+            }
+        }
+        getList();
+    },  [user])
 
     const handleClose = () => {
         setShow(false);
