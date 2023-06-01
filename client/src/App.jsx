@@ -5,6 +5,7 @@ import ChatListItem from './components/ChatListItem'
 import ChatIntro from './components/ChatIntro'
 import ChatWindow from './components/ChatWindow'
 import NewChat from './components/NewChat'
+import Login from './components/Login'
 
 function App() {
 
@@ -14,11 +15,7 @@ function App() {
     {chatId: 3, title: 'Fulado de tal3', avatar: 'https://www.w3schools.com/howto/img_avatar2.png'}
   ])
   const [activeChat, setActiveChat] = useState({});
-  const [user, setuser] = useState({
-    id: 1234,
-    avatar: 'https://www.w3schools.com/howto/img_avatar2.png',
-    name: 'Mikael Souza'
-  });
+  const [user, setuser] = useState(null);
 
   const [showNewChat, setShowNewChat] = useState(false);
 
@@ -26,6 +23,18 @@ function App() {
     setShowNewChat(true);
   }
 
+  const handleLoginData = async (u) => {
+    let newUser = {
+      id: u.uid,
+      name: u.displayName,
+      avatar: u.photoURL
+    };
+    setuser(newUser)
+  }
+
+  if (user === null) {
+    return <Login onReceive={handleLoginData}/>
+  }
   return (
     <div className="app-window">
       <div className="sidebar">

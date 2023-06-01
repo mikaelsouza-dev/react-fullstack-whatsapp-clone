@@ -1,0 +1,180 @@
+[33mcommit b75a737eb133ad0b432978f1990f46812e23c0ee[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Wed May 31 16:56:59 2023 -0300
+
+    firebase initial configs
+
+[33mcommit 52b23247fd6d7881a6743defbc99f24cf3d23e89[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Wed May 31 16:45:29 2023 -0300
+
+    new chat screen ended
+
+[33mcommit b6ae76a82abaddf1c99914a8fe06c6c4bdf9fd60[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Wed May 31 10:20:43 2023 -0300
+
+    show messages on chat component
+
+[33mcommit f330ab111f67fd00579c89d23f197625cf668e49[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Wed May 31 06:38:18 2023 -0300
+
+    show messages in chat
+
+[33mcommit 0902ccb99c823a6ea79581fa2c2393ceb59dcecc[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Tue May 30 21:53:30 2023 -0300
+
+    content area emojis added and mic
+
+[33mcommit 6817b4f668e6199032356b596d4b6d5173b5b130[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Tue May 30 20:55:52 2023 -0300
+
+    emoji area finalized
+
+[33mcommit 47ec5f10285b2be314fcf29442610b20b958ecaa[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Tue May 30 20:26:55 2023 -0300
+
+    chat window body finalized
+
+[33mcommit 075859c38e237721cf07fa41700b921688f4c129[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Tue May 30 20:05:26 2023 -0300
+
+    chat window body finalized
+
+[33mcommit 86092af73287b03af23e02e3cd2510f635fb31b3[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Tue May 30 16:01:13 2023 -0300
+
+    identify names chats by data added
+
+[33mcommit 707fc4c912ab83abbe3620e6f001e7a90848f961[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Tue May 30 15:57:18 2023 -0300
+
+    added scss files
+
+[33mcommit 84644ef5fe8380ea4fc84644d39e6babe715e321[m
+Merge: 0c2174f ef3edbc
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Tue May 30 15:52:51 2023 -0300
+
+    tsx to jsx
+
+[33mcommit 0c2174fa026e3aa9a158a14fac292abc9e3ec067[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Tue May 30 15:49:53 2023 -0300
+
+    tsx to jsx
+
+[33mcommit ef3edbc5ac6effc950f1f4e0ccc2f6b0d7caebaf[m
+Author: Mikael Souza <99297849+mikaelsouza-dev@users.noreply.github.com>
+Date:   Tue May 30 15:42:04 2023 -0300
+
+    tsx to jsx
+
+[33mcommit 869d679f0c7c8481d987e1ea84172df2cc332e32[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Mon May 29 18:54:22 2023 -0300
+
+    test
+
+[33mcommit d99a674c9afc1e59eb66571a97ea50a0e5eb4470[m
+Author: mikaelsouza-dev <mikael.silva62@aluno.ce.gov.br>
+Date:   Mon May 29 17:07:25 2023 -0300
+
+    start indivual chats
+
+[33mcommit c780f3f3f0cce686dde56cff3b7224183769e912[m
+Author: mikaelsouza-dev <mikael.silva62@aluno.ce.gov.br>
+Date:   Mon May 29 16:15:15 2023 -0300
+
+    start one chat design
+
+[33mcommit 8cad9bd752320e3e90682481f987e3ae3677c57d[m
+Author: mikaelsouza-dev <mikael.silva62@aluno.ce.gov.br>
+Date:   Mon May 29 15:29:24 2023 -0300
+
+    select chat ready
+
+[33mcommit 1fe07428045dbf532408ee282cd06473487978a7[m
+Author: mikaelsouza-dev <mikael.silva62@aluno.ce.gov.br>
+Date:   Mon May 29 11:42:26 2023 -0300
+
+    starting chatintro / select chat
+
+[33mcommit 9ee55186a05e93f7886c6a0edd8dc3bc46d5649d[m
+Author: mikaelsouza-dev <mikael.silva62@aluno.ce.gov.br>
+Date:   Mon May 29 10:31:45 2023 -0300
+
+    update folders / organization
+
+[33mcommit 674133cd9d46dc8e7e3de6b3014b34bdc20bbbda[m
+Author: mikaelsouza-dev <mikael.silva62@aluno.ce.gov.br>
+Date:   Mon May 29 09:08:15 2023 -0300
+
+    test
+
+[33mcommit 5fcecca57e30c6c5d840ee46c691ad27bd50a14a[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 22:10:00 2023 -0300
+
+    chat intro added
+
+[33mcommit 7ad52b15bda58424c0c5d22e9a4f2cd5aa895c12[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 22:05:01 2023 -0300
+
+    chatlist interface ended
+
+[33mcommit 71b1ef51d177d0f81f363c06e444770796f13d36[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 21:54:22 2023 -0300
+
+    chatlist styled
+
+[33mcommit 9619b14cf0d1b9cab9a9aab3816634c78fb5d77c[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 21:31:44 2023 -0300
+
+    chatlistitem added
+
+[33mcommit cbd9f4b451a495b383a06b0c2cb975abe53e0a71[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 21:30:47 2023 -0300
+
+    chatlistitem added
+
+[33mcommit 6d9c339ceee3fe0aa56e648ecac50a24887eea27[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 21:21:33 2023 -0300
+
+    sidebar search styled
+
+[33mcommit 32ec665d408833467b961b3f528db25e58d39581[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 20:02:16 2023 -0300
+
+    right-area style
+
+[33mcommit cd421d584afb90bfa4aa82df15d9f9edc9ec0279[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 19:59:13 2023 -0300
+
+    right-area style
+
+[33mcommit c3c17c8655fa9ff78b019732d80354d9d7371beb[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 19:14:47 2023 -0300
+
+    initial configs
+
+[33mcommit f83b6fa40f66dac2c66f9778eb317684f7daeb8f[m
+Author: unknown <mikael.silva62@aluno.ce.gov.br>
+Date:   Sun May 28 19:07:54 2023 -0300
+
+    initial configs
