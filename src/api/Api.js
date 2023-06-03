@@ -1,4 +1,4 @@
-import { signInWithPopup, GoogleAuthProvider, TwitterAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, TwitterAuthProvider, GithubAuthProvider } from "firebase/auth";
 import { authentication, db } from './firebaseConfig';
 import { addDoc, arrayUnion, collection, deleteDoc, doc, documentId, getDoc, getDocs, onSnapshot, query, setDoc, updateDoc, where } from "firebase/firestore";
 
@@ -9,9 +9,22 @@ export default {
     return result;
   },
   ttPopup: async () => {
-    const provider = new TwitterAuthProvider();
-    let result = await signInWithPopup(authentication, provider);
-    return result;
+    try {
+      const provider = new TwitterAuthProvider();
+      let result = await signInWithPopup(authentication, provider);
+      return result;
+    } catch (e) {
+      console.error("Erro: ", e);
+    }
+  },
+  gitPopup: async () => {
+    try {
+      const provider = new GithubAuthProvider();
+      let result = await signInWithPopup(authentication, provider);
+      return result;
+    } catch (e) {
+      console.error("Erro: ", e);
+    }
   },
   addUser: async (u) => {
     try {

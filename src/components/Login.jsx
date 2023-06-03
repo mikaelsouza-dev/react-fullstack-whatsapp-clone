@@ -22,14 +22,22 @@ const Login = ({onReceive}) => {
         }
     }
 
+    const handleGithubLogin = async () => {
+        let result = await Api.gitPopup();
+        if (result) {
+            onReceive(result.user)
+        } else {
+            alert('deu ruim')
+        }
+    }
+
   return (
       <div className='login'>
           <h1>Acesse sua conta</h1>
-          <p>Bem-vindo à página de login! Para acessar sua conta, insira suas informações de login nos campos abaixo. Certifique-se de digitar corretamente seu nome de usuário e senha. Se ainda não possui uma conta, clique no link 'Registrar' para criar uma.</p>
+          <p>Bem-vindo à página de login! Para acessar sua conta, basta fazer login utilizando uma das plataformas abaixo. Venha e aproveite seu WhatsApp Clone :)</p>
           <button onClick={handleGoogleLogin}><FaGoogle className='socialIcon' /> Entrar com Google</button>
           <button onClick={handleTwitterLogin}><FaTwitter className='socialIcon' /> Entrar com Twitter</button>
-          <button onClick={handleGoogleLogin}><FaGithub className='socialIcon' /> Entrar com GitHub</button>
-          <button onClick={handleGoogleLogin}><FaMicrosoft className='socialIcon' /> Entrar com Microsoft</button>
+          <button onClick={handleGithubLogin}><FaGithub className='socialIcon' /> Entrar com GitHub</button>
     </div>
   )
 }
