@@ -2,20 +2,40 @@
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    flex-direction: column;
+    background-color: #222222;
+}
+
+.login h1 {
+    color: white;
+}
+
+.login p {
+    color: #d1d1d1;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 button {
-    background-color: #dd4b39;
-    border: 1px solid #dd4b39;
+    background: none;
+    border: 1px solid #1ff37f;
     padding: 20px;
-    border-radius: 20px;
+    margin-bottom: 15px;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
     color: #fff;
     font-size: 20px;
     transition: all ease .5s
 }
+button .socialIcon {
+    margin-right: 10px;
+}
 button:hover {
-    background-color: #fff;
-    color: #dd4b39;
+    background-color: #2e2e2e;
     cursor: pointer;
 }
