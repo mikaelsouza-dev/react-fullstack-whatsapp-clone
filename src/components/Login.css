@@ -7,6 +7,14 @@
     background-color: #222222;
 }
 
+.content {
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .login h1 {
     color: white;
 }
@@ -23,7 +31,7 @@ button {
     border: 1px solid #1ff37f;
     padding: 20px;
     margin-bottom: 15px;
-    width: 700px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

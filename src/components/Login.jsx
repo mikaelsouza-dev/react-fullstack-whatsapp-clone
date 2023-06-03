@@ -33,11 +33,13 @@ const Login = ({onReceive}) => {
 
   return (
       <div className='login'>
+          <div className="content">
           <h1>Acesse sua conta</h1>
           <p>Bem-vindo à página de login! Para acessar sua conta, basta fazer login utilizando uma das plataformas abaixo. Venha e aproveite seu WhatsApp Clone :)</p>
           <button onClick={handleGoogleLogin}><FaGoogle className='socialIcon' /> Entrar com Google</button>
           <button onClick={handleTwitterLogin}><FaTwitter className='socialIcon' /> Entrar com Twitter</button>
-          <button onClick={handleGithubLogin}><FaGithub className='socialIcon' /> Entrar com GitHub</button>
+              <button onClick={handleGithubLogin}><FaGithub className='socialIcon' /> Entrar com GitHub</button>
+              </div>
     </div>
   )
 }
